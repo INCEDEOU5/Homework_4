@@ -12,6 +12,15 @@ public class Problem_4 : MonoBehaviour
     //You should have the results of Part_4, 0,0,0, Part_4_Child -5,-5,-5 and Part_4_GameObject, 5,5,5
     void Start()
     {
+        var cube = transform.GetComponent<Transform>();
+        PrintOutNameAndPosition(cube.name, cube.position);
+
+        var child = transform.GetChild(0).GetComponent<Transform>();
+        child = transform.Find("Part_4_Child").GetComponent<Transform>();
+        PrintOutNameAndPosition(child.name, child.position);
+
+        var other = GameObject.Find("Part_4_Game_Object").GetComponent<Transform>();
+        PrintOutNameAndPosition(other.name, other.position);
 
     }
 
@@ -22,3 +31,4 @@ public class Problem_4 : MonoBehaviour
     }
 
 }
+
